@@ -2,7 +2,7 @@
 
 ## 📋 Deskripsi Proyek
 
-**UTS_Sistem_Pakar** adalah aplikasi web interaktif yang dirancang untuk mendiagnosa berbagai gangguan postur tubuh menggunakan pendekatan **Sistem Pakar (Expert System)**. Aplikasi ini membantu pengguna mengidentifikasi kondisi postur mereka berdasarkan gejala yang dialami.
+**sistem_pakar-gangguan_tubuh** adalah aplikasi web interaktif yang dirancang untuk mendiagnosa berbagai gangguan postur tubuh menggunakan pendekatan **Sistem Pakar (Expert System)**. Aplikasi ini membantu pengguna mengidentifikasi kondisi postur mereka berdasarkan gejala yang dialami.
 
 ### Penyakit yang Dapat Didiagnosa
 
@@ -17,7 +17,7 @@
 ## 🏗️ Struktur Proyek
 
 ```
-UTS_Sistem_Pakar/
+sistem_pakar-gangguan_tubuh/
 ├── app.py                 # Flask application utama
 ├── metode.py             # Business logic sistem pakar (inferensi)
 ├── templates/            # Folder template HTML
@@ -124,7 +124,7 @@ pip (Python package manager)
 
 1. **Clone atau download project**
    ```bash
-   cd "d:\.TRPL\Semester 4\AI\UTS_Sistem_Pakar"
+   cd "d:\sistem_pakar-gangguan_tubuh"
    ```
 
 2. **Install dependencies**
