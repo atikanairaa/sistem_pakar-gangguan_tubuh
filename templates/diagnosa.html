@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Cek Gejala Postur Tubuh Kamu</h2>
+        <p class="lead text-center">Pilih gejala sesuai dengan kondisimu saat ini. Pastikan kamu mengisi lebih dari 2 gejala ya!</p>
+
+        <form method="POST">
+            <div class="row">
+                {% for kode, deskripsi in gejala.items() %}
+                <div class="col-md-6 mb-3">
+                    <label class="card h-100" style="cursor: pointer;">
+                        <div class="card-body d-flex align-items-center">
+                            <input class="form-check-input me-3" type="checkbox" name="gejala" value="{{ kode }}" {% if kode in selected %}checked{% endif %}>
+                            <span class="form-check-label">{{ deskripsi }}</span>
+                        </div>
+                    </label>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-2 mb-3">
+                <button type="submit" class="btn btn-lg">Diagnosa Sekarang</button>
+            </div>
+        </form>        
+
+        {% if hasil %}
+            <div class="mt-5">
+                <div class="card border-success border-2">
+                    <div class="card-body">
+                        <h3 class="text-dark mb-3">Hasil Diagnosa:</h3>
+                        <ul>
+                        {% for h in hasil %}
+                            <h4><span class="text-dark">Gangguan {{ h }}</span></h4>
+                        {% endfor %}
+                        <p class="text-dark">Silahkan konsultasi dengan dokter untuk mendapatkan penjelasan lebih lanjut.</p>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/diagnosa" class="btn btn-secondary">Ulang Diagnosa</a>
+                </div>
+            </div>
+        {% elif hasil is not none %}
+            <div class="mt-5">
+                <div class="card border-danger border-2 text-danger">
+                    <div class="card-body mb-4">
+                        <h6 class="">Tidak ditemukan gangguan postur sesuai gejala.</h6>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <a href="/diagnosa" class="btn btn-secondary">Ulang Diagnosa</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
